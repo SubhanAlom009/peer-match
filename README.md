@@ -241,25 +241,6 @@ const matchScore =
 - **Body**: Clean, readable sans-serif
 - **Badges**: Small, colorful indicators
 
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy automatically
-
-### Manual Deployment
-
-```bash
-# Build the application
-npm run build
-
-# Start production server
-npm start
-```
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -267,10 +248,6 @@ npm start
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -282,9 +259,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Your Name** - [your.email@example.com](mailto:your.email@example.com)
+**Subhan Alom** - [subhanalombasic123@gmail.com](mailto:subhanalombasic123@gmail.com)
 
-Project Link: [https://github.com/yourusername/peer-match](https://github.com/yourusername/peer-match)
+Project Link: [https://github.com/SubhanAlom009/peer-match](https://github.com/SubhanAlom009/peer-match)
 
 ---
 
