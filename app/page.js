@@ -381,7 +381,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white hover:text-purple-600 hover:bg-white text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+                className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Link href="/auth/signin">Sign In</Link>
               </Button>
