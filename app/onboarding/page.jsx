@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export default function OnboardingPage() {
-  const { data: session, status } = useSession();
+  const { data: session, status, update } = useSession(); // Add 'update' here
   const [form, setForm] = useState({
     year: "",
     college: "",
@@ -100,9 +100,13 @@ export default function OnboardingPage() {
       if (response.status === 201 || response.status === 200) {
         toast.success("Profile updated successfully! 🎉");
 
-        // If user already has profile data, redirect to dashboard
-        // If it's first time setup, redirect to dashboard too
-        router.push("/dashboard");
+        // Force session update to refresh isOnboarded status
+        await update();
+
+        // Small delay to ensure session is updated
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 500);
       }
     } catch (error) {
       console.error("Error submitting form:", error);

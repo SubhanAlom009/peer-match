@@ -58,7 +58,6 @@ export default function SignUp() {
       }
     } catch (error) {
       toast.error("Something went wrong with Google sign up");
-    } finally {
       setGoogleLoading(false);
     }
   };

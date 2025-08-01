@@ -61,7 +61,6 @@ export default function SignIn() {
       await signIn("google", { callbackUrl: "/dashboard" });
     } catch (error) {
       toast.error("Google signin failed");
-    } finally {
       setGoogleLoading(false);
     }
   };
