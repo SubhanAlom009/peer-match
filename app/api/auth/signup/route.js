@@ -14,8 +14,8 @@ export async function POST(req) {
       );
     }
 
-    // Check if user already exists
-    const existingUser = await prisma.User.findUnique({
+    // Check if user already exists - FIXED: using lowercase 'user'
+    const existingUser = await prisma.user.findUnique({
       where: { email },
     });
 
@@ -35,6 +35,7 @@ export async function POST(req) {
         name,
         email,
         password: hashedPassword,
+        isOnboarded: false, // Add this explicitly
       },
     });
 
