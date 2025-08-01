@@ -6,6 +6,16 @@ export async function POST(req) {
     const body = await req.json();
     const { userId, year, college, skills, availability, linkedinURL } = body;
 
+    // Check if user exists first
+    const existingUser = await prisma.user.findUnique({
+      where: { id: userId },
+    });
+
+    if (!existingUser) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    // Update the user with new data
     const user = await prisma.user.update({
       where: { id: userId },
       data: {
@@ -20,7 +30,7 @@ export async function POST(req) {
 
     return NextResponse.json({ user }, { status: 200 });
   } catch (error) {
-    console.error(error);
+    console.error("Onboarding API Error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

@@ -23,12 +23,13 @@ export default withAuth(
       return Response.redirect(url);
     }
 
-    // If user is onboarded but trying to access onboarding, redirect to dashboard
-    if (token && token.isOnboarded && pathname === "/onboarding") {
-      const url = req.nextUrl.clone();
-      url.pathname = "/dashboard";
-      return Response.redirect(url);
-    }
+    // REMOVED THE BLOCKING: Allow onboarded users to access onboarding for profile editing
+    // This line was preventing profile updates:
+    // if (token && token.isOnboarded && pathname === "/onboarding") {
+    //   const url = req.nextUrl.clone();
+    //   url.pathname = "/dashboard";
+    //   return Response.redirect(url);
+    // }
   },
   {
     callbacks: {

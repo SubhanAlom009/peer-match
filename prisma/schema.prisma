@@ -35,7 +35,6 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// filepath: c:\Users\subha\OneDrive\Desktop\Web Dev\Internship Assignment projects\02_peer_match\prisma\schema.prisma
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -55,6 +54,10 @@ model User {
   accounts Account[]
   sessions Session[]
 
+  // Add these two lines for connections
+  connections         Connection[] @relation("UserConnections")
+  receivedConnections Connection[] @relation("UserReceivedConnections")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -65,4 +68,25 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Connection {
+  id          String           @id @default(cuid())
+  requesterId String
+  receiverId  String
+  status      ConnectionStatus @default(PENDING)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  requester User @relation("UserConnections", fields: [requesterId], references: [id], onDelete: Cascade)
+  receiver  User @relation("UserReceivedConnections", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@unique([requesterId, receiverId])
+  @@map("connections")
+}
+
+enum ConnectionStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
 }
