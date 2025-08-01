@@ -16,6 +16,9 @@ import {
   Globe,
   Brain,
   Heart,
+  Lightbulb,
+  Network,
+  Handshake,
 } from "lucide-react";
 
 export default function Home() {
@@ -35,23 +38,23 @@ export default function Home() {
               variant="outline"
               className="px-4 py-2 text-sm font-medium bg-white/80 backdrop-blur-sm"
             >
-              🎓 Find Your Perfect Study Partner
+              🤝 Find Your Perfect Collaboration Buddy
             </Badge>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 leading-tight">
-            Connect. Learn.
+            Connect. Collaborate.
             <br className="hidden md:block" />
             <span className="relative">
-              Succeed
+              Create
               <div className="absolute -bottom-2 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-80"></div>
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of students who found their ideal study partners,
-            formed lasting friendships, and achieved academic excellence
-            together.
+            Join thousands of students and professionals who found their ideal
+            collaboration partners, built meaningful networks, and achieved
+            success together through shared interests.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -74,7 +77,7 @@ export default function Home() {
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Link href="/auth/signup">
-                    Start Matching
+                    Start Networking
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
@@ -93,7 +96,7 @@ export default function Home() {
           <div className="mt-12 flex justify-center items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span>10,000+ Active Students</span>
+              <span>10,000+ Active Members</span>
             </div>
             <div className="flex items-center gap-2">
               <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -116,7 +119,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Our intelligent matching system connects you with like-minded
-              students based on your skills, schedule, and learning goals.
+              peers based on your skills, interests, and collaboration goals.
             </p>
           </div>
 
@@ -133,8 +136,8 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-gray-600 mb-4">
-                  Share your skills, academic year, availability, and learning
-                  goals. The more detailed, the better your matches!
+                  Share your skills, interests, availability, and collaboration
+                  goals. Connect your LinkedIn for professional networking!
                 </p>
                 <div className="flex items-center text-sm text-blue-600 font-medium">
                   <span>2 minutes setup</span>
@@ -155,11 +158,11 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-gray-600 mb-4">
-                  Our AI algorithm analyzes compatibility across multiple
-                  dimensions to find your perfect study partners.
+                  Our AI algorithm analyzes compatibility across interests,
+                  skills, and goals to find your perfect collaboration buddies.
                 </p>
                 <div className="flex items-center text-sm text-purple-600 font-medium">
-                  <span>95% accuracy rate</span>
+                  <span>95% compatibility rate</span>
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </CardContent>
@@ -169,7 +172,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full -translate-y-10 translate-x-10 opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
               <CardHeader className="relative z-10">
                 <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+                  <Handshake className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-900">
                   Start Collaborating
@@ -177,11 +180,11 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-gray-600 mb-4">
-                  Connect instantly, schedule study sessions, join groups, and
-                  accelerate your learning journey together.
+                  Connect on LinkedIn, start projects together, share ideas, and
+                  build meaningful professional relationships.
                 </p>
                 <div className="flex items-center text-sm text-pink-600 font-medium">
-                  <span>Join 50+ study groups</span>
+                  <span>Connect professionally</span>
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </CardContent>
@@ -205,22 +208,21 @@ export default function Home() {
                 Transform Your
                 <span className="text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
                   {" "}
-                  Learning Experience
+                  Professional Network
                 </span>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Studies show that students who collaborate with peers achieve
-                23% better academic performance and develop stronger
-                professional networks.
+                Research shows that strong professional networks lead to 23%
+                better career opportunities and more innovative collaborations.
               </p>
 
               <div className="space-y-4">
                 {[
-                  "Find study partners with complementary skills",
-                  "Join subject-specific study groups",
-                  "Share resources and knowledge effectively",
-                  "Build lasting professional relationships",
-                  "Improve accountability and motivation",
+                  "Find collaboration partners with complementary skills",
+                  "Build meaningful professional relationships",
+                  "Share ideas and resources effectively",
+                  "Expand your network across universities",
+                  "Discover new opportunities through connections",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -234,10 +236,10 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0">
                   <CardContent className="p-6 text-center">
-                    <Brain className="w-8 h-8 mx-auto mb-2" />
+                    <Network className="w-8 h-8 mx-auto mb-2" />
                     <div className="text-2xl font-bold">85%</div>
                     <div className="text-sm opacity-90">
-                      Better retention rate
+                      Find project partners
                     </div>
                   </CardContent>
                 </Card>
@@ -252,9 +254,11 @@ export default function Home() {
 
                 <Card className="bg-gradient-to-br from-pink-500 to-pink-600 text-white border-0 -mt-4">
                   <CardContent className="p-6 text-center">
-                    <BookOpen className="w-8 h-8 mx-auto mb-2" />
+                    <Lightbulb className="w-8 h-8 mx-auto mb-2" />
                     <div className="text-2xl font-bold">500+</div>
-                    <div className="text-sm opacity-90">Study groups</div>
+                    <div className="text-sm opacity-90">
+                      Collaboration projects
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -278,10 +282,11 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What Students Say
+              What Members Say
             </h2>
             <p className="text-xl text-gray-600">
-              Real stories from students who found their perfect study partners
+              Real stories from students and professionals who found their
+              perfect collaboration partners
             </p>
           </div>
 
@@ -291,21 +296,21 @@ export default function Home() {
                 name: "Sarah Chen",
                 role: "Computer Science, Stanford",
                 content:
-                  "PeerMatch helped me find a study group that boosted my GPA from 3.2 to 3.8! The algorithm really works.",
+                  "PeerMatch helped me find amazing project partners! We built an app together that landed us internships at top tech companies.",
                 rating: 5,
               },
               {
                 name: "Alex Rodriguez",
                 role: "Engineering, MIT",
                 content:
-                  "I've made lifelong friends through PeerMatch. We still collaborate on projects even after graduation!",
+                  "I've made lifelong professional connections through PeerMatch. We still collaborate on startups and side projects!",
                 rating: 5,
               },
               {
                 name: "Emily Johnson",
                 role: "Business, Harvard",
                 content:
-                  "The matching system is incredibly accurate. Found my perfect study partner on the first try!",
+                  "The LinkedIn integration is perfect. Found my co-founder through PeerMatch and we're building something amazing together!",
                 rating: 5,
               },
             ].map((testimonial, index) => (
@@ -353,11 +358,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Ready to Find Your
             <br />
-            Perfect Study Partner?
+            Perfect Collaboration Buddy?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of students who are already collaborating, learning,
-            and succeeding together.
+            Join thousands of students and professionals who are already
+            networking, collaborating, and building the future together.
           </p>
 
           {!session && (
@@ -368,7 +373,7 @@ export default function Home() {
                 className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Link href="/auth/signup">
-                  Get Started Free
+                  Start Networking Free
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
@@ -376,7 +381,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white hover:text-black hover:bg-white text-purple-600 px-8 py-4 text-lg rounded-full transition-all duration-300"
+                className="border-white hover:text-purple-600 hover:bg-white text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
               >
                 <Link href="/auth/signin">Sign In</Link>
               </Button>
@@ -384,7 +389,8 @@ export default function Home() {
           )}
 
           <div className="mt-8 text-white/80 text-sm">
-            Free to join • No credit card required • Start matching in 2 minutes
+            Free to join • No credit card required • Start connecting in 2
+            minutes
           </div>
         </div>
       </section>
@@ -398,7 +404,8 @@ export default function Home() {
             </div>
           </div>
           <p className="text-gray-400 mb-4">
-            Connecting students worldwide for better learning outcomes.
+            Connecting students and professionals worldwide for meaningful
+            collaborations.
           </p>
           <div className="text-sm text-gray-500">
             © 2025 PeerMatch. All rights reserved.

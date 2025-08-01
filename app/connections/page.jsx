@@ -127,8 +127,8 @@ export default function Connections() {
             </h1>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Manage your study partnerships and continue collaborating with
-              amazing peers
+              Manage your professional network and connect with like-minded
+              peers on LinkedIn
             </p>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Connections() {
               <div className="mb-8">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-gray-900">
-                    Your Study Partners ({connections.length})
+                    Your Network Buddies ({connections.length})
                   </h2>
                   <Button
                     asChild
@@ -166,7 +166,7 @@ export default function Connections() {
                   >
                     <Link href="/matches">
                       <Users className="w-4 h-4 mr-2" />
-                      Find More Partners
+                      Find More Buddies
                     </Link>
                   </Button>
                 </div>
@@ -208,7 +208,7 @@ export default function Connections() {
                         <div className="flex items-center gap-2 mb-2">
                           <Zap className="w-4 h-4 text-yellow-500" />
                           <h4 className="font-medium text-gray-900 text-sm">
-                            Skills
+                            Interests & Skills
                           </h4>
                         </div>
                         <div className="flex flex-wrap gap-1">
@@ -261,7 +261,7 @@ export default function Connections() {
                               rel="noopener noreferrer"
                             >
                               <ExternalLink className="w-4 h-4 mr-2" />
-                              LinkedIn
+                              Connect on LinkedIn
                             </Link>
                           </Button>
                         )}
@@ -300,8 +300,8 @@ export default function Connections() {
                     No Connections Yet
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Start connecting with study partners to build your network
-                    and accelerate your learning!
+                    Start connecting with like-minded buddies based on similar
+                    interests and grow your professional network!
                   </p>
                   <Button
                     asChild
@@ -309,7 +309,7 @@ export default function Connections() {
                   >
                     <Link href="/matches">
                       <Users className="w-4 h-4 mr-2" />
-                      Find Study Partners
+                      Find Your Buddies
                     </Link>
                   </Button>
                 </CardContent>

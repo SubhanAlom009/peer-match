@@ -20,6 +20,9 @@ import {
   Plus,
   Sparkles,
   Check,
+  Handshake,
+  Network,
+  Target,
 } from "lucide-react";
 
 export default function MatchesPage() {
@@ -127,17 +130,17 @@ export default function MatchesPage() {
                 className="px-4 py-2 bg-white/80 backdrop-blur-sm"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
-                Perfect Matches Found
+                Perfect Collaboration Matches
               </Badge>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-              Your Study Partner Matches
+              Your Collaboration Buddies
             </h1>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover amazing study partners who share your interests,
-              schedule, and learning goals
+              Discover amazing collaboration partners who share your interests,
+              skills, and professional goals for networking and project building
             </p>
           </div>
         </div>
@@ -167,13 +170,14 @@ export default function MatchesPage() {
               <Card className="max-w-md mx-auto bg-white/80 backdrop-blur-sm shadow-xl border-0">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-white" />
+                    <Network className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    No Matches Yet
+                    No Collaboration Matches Yet
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Complete your profile to find compatible study partners
+                    Complete your profile to find compatible collaboration
+                    buddies and start building your professional network
                   </p>
                   <Button
                     asChild
@@ -189,7 +193,7 @@ export default function MatchesPage() {
               <div className="mb-8">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-gray-900">
-                    Found {matches.length} Perfect Matches
+                    Found {matches.length} Perfect Collaboration Matches
                   </h2>
                   <div className="flex items-center gap-3">
                     <Badge
@@ -270,7 +274,7 @@ export default function MatchesPage() {
                           <div className="flex items-center gap-2 mb-2">
                             <Zap className="w-4 h-4 text-yellow-500" />
                             <h4 className="font-medium text-gray-900">
-                              Skills
+                              Skills & Interests
                             </h4>
                           </div>
                           <div className="flex flex-wrap gap-1">
@@ -327,7 +331,7 @@ export default function MatchesPage() {
                                 </div>
                               ) : (
                                 <>
-                                  <Heart className="w-4 h-4 mr-2" />
+                                  <Handshake className="w-4 h-4 mr-2" />
                                   Connect
                                 </>
                               )}

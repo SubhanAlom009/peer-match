@@ -14,7 +14,7 @@ import {
   Calendar,
   ExternalLink,
   Edit,
-  MessageCircle,
+  Network,
   Award,
   Globe,
   Heart,
@@ -22,6 +22,7 @@ import {
   CheckCircle,
   Clock,
   UserPlus,
+  Handshake,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -113,7 +114,8 @@ export default function Dashboard() {
               </h1>
 
               <p className="text-xl text-gray-600 mb-4">
-                Ready to continue your learning journey?
+                Ready to expand your professional network and find collaboration
+                partners?
               </p>
 
               <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -142,7 +144,7 @@ export default function Dashboard() {
               >
                 <Link href="/matches">
                   <UserPlus className="w-4 h-4 mr-2" />
-                  Find Partners
+                  Find Buddies
                 </Link>
               </Button>
             </div>
@@ -157,16 +159,18 @@ export default function Dashboard() {
             <Card className="relative overflow-hidden group bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0 hover:shadow-xl transition-all duration-300">
               <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -translate-y-8 translate-x-8"></div>
               <CardContent className="p-8 relative z-10 text-center">
-                <Users className="w-10 h-10 mb-3 opacity-80 mx-auto" />
+                <Network className="w-10 h-10 mb-3 opacity-80 mx-auto" />
                 <div className="text-3xl font-bold mb-1">
                   {connections.length}
                 </div>
-                <div className="text-sm opacity-90">Active Connections</div>
+                <div className="text-sm opacity-90">Network Connections</div>
                 <p className="text-xs opacity-75 mt-2">
                   {connections.length === 0
-                    ? "Start connecting with study partners!"
-                    : `Connected with ${connections.length} amazing ${
-                        connections.length === 1 ? "partner" : "partners"
+                    ? "Start building your professional network!"
+                    : `Connected with ${
+                        connections.length
+                      } amazing collaboration ${
+                        connections.length === 1 ? "buddy" : "buddies"
                       }`}
                 </p>
               </CardContent>
@@ -204,11 +208,11 @@ export default function Dashboard() {
                 <div className="flex items-center justify-between">
                   <div>
                     <CardTitle className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                      Your Profile
+                      Your Professional Profile
                       <Award className="w-6 h-6 text-yellow-500" />
                     </CardTitle>
                     <p className="text-gray-600 mt-1">
-                      Complete your profile to get better matches
+                      Complete your profile to get better collaboration matches
                     </p>
                   </div>
                   <Button
@@ -247,7 +251,9 @@ export default function Dashboard() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Globe className="w-4 h-4 text-blue-500" />
-                      <h4 className="font-medium text-gray-900">College</h4>
+                      <h4 className="font-medium text-gray-900">
+                        College/University
+                      </h4>
                     </div>
                     <p className="text-gray-600 bg-gray-50 rounded-lg px-3 py-2">
                       {userProfile.college || "Not specified"}
@@ -282,7 +288,7 @@ export default function Dashboard() {
                     <div className="flex items-center gap-2">
                       <Zap className="w-4 h-4 text-yellow-500" />
                       <h4 className="font-medium text-gray-900">
-                        Skills & Technologies
+                        Skills & Interests
                       </h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -298,7 +304,7 @@ export default function Dashboard() {
                         ))
                       ) : (
                         <p className="text-gray-500 italic">
-                          No skills added yet
+                          No skills/interests added yet
                         </p>
                       )}
                     </div>
@@ -307,7 +313,9 @@ export default function Dashboard() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <ExternalLink className="w-4 h-4 text-blue-500" />
-                      <h4 className="font-medium text-gray-900">LinkedIn</h4>
+                      <h4 className="font-medium text-gray-900">
+                        LinkedIn Profile
+                      </h4>
                     </div>
                     {userProfile.linkedinURL ? (
                       <a
@@ -340,7 +348,8 @@ export default function Dashboard() {
               Quick Actions
             </h2>
             <p className="text-gray-600">
-              Connect with study partners and manage your learning network
+              Connect with collaboration buddies and grow your professional
+              network
             </p>
           </div>
 
@@ -353,14 +362,15 @@ export default function Dashboard() {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-900">
-                  Find Study Partners
+                  Find Collaboration Buddies
                 </CardTitle>
               </CardHeader>
 
               <CardContent className="relative z-10">
                 <p className="text-gray-600 mb-4">
-                  Discover peers who share your interests and schedule. Get
-                  matched with compatible study partners based on your profile.
+                  Discover peers who share your interests and goals. Get matched
+                  with compatible collaboration partners based on your profile
+                  and skills.
                 </p>
                 <Button
                   asChild
@@ -379,10 +389,10 @@ export default function Dashboard() {
 
               <CardHeader className="relative z-10">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <MessageCircle className="w-6 h-6 text-white" />
+                  <Handshake className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-900">
-                  Your Connections
+                  Your Network
                   {connections.length > 0 && (
                     <Badge className="ml-2 bg-purple-100 text-purple-700">
                       {connections.length}
@@ -394,8 +404,8 @@ export default function Dashboard() {
               <CardContent className="relative z-10">
                 <p className="text-gray-600 mb-4">
                   {connections.length === 0
-                    ? "Start building your study network by connecting with matched partners."
-                    : `Manage your ${connections.length} study partnerships and continue collaborating with your peers.`}
+                    ? "Start building your professional network by connecting with matched collaboration partners."
+                    : `Manage your ${connections.length} professional connections and continue collaborating with your network buddies.`}
                 </p>
                 <Button
                   asChild
@@ -405,7 +415,7 @@ export default function Dashboard() {
                   <Link href="/connections">
                     <Heart className="w-4 h-4 mr-2" />
                     {connections.length === 0
-                      ? "Start Connecting"
+                      ? "Start Networking"
                       : "View Connections"}
                   </Link>
                 </Button>
