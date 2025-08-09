@@ -1,8 +1,8 @@
 "use client";
-
+import { Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Link from "next/link";
 import { useEffect } from "react";
+import Link from "next/link";
 
 const messages = {
   Configuration: "Auth configuration error. Contact support.",
@@ -22,13 +22,20 @@ function friendly(code) {
   return messages[code] || messages.Default;
 }
 
-export default function AuthErrorPage() {
+function Loading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center text-sm text-gray-500">
+      Loading...
+    </div>
+  );
+}
+
+function ErrorContentInner() {
   const params = useSearchParams();
   const router = useRouter();
   const code = params.get("error") || "Default";
   const msg = friendly(code);
 
-  // Optional: auto-redirect after a delay (e.g. for SessionRequired)
   useEffect(() => {
     if (code === "SessionRequired") {
       const t = setTimeout(() => router.replace("/auth/signin"), 2500);
@@ -76,3 +83,13 @@ export default function AuthErrorPage() {
     </div>
   );
 }
+
+export default function AuthErrorPage() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ErrorContentInner />
+    </Suspense>
+  );
+}
+
+export const dynamic = "force-dynamic";
