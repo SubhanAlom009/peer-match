@@ -9,9 +9,7 @@ export default withAuth(
     if (
       pathname.startsWith("/auth/") ||
       pathname.startsWith("/api/") ||
-      pathname === "/" ||
-      pathname.startsWith("/_next") ||
-      pathname.startsWith("/favicon")
+      pathname === "/"
     ) {
       return;
     }
@@ -23,13 +21,11 @@ export default withAuth(
       return Response.redirect(url);
     }
 
-    // REMOVED THE BLOCKING: Allow onboarded users to access onboarding for profile editing
-    // This line was preventing profile updates:
-    // if (token && token.isOnboarded && pathname === "/onboarding") {
-    //   const url = req.nextUrl.clone();
-    //   url.pathname = "/dashboard";
-    //   return Response.redirect(url);
-    // }
+    if (token && token.isOnboarded && pathname === "/onboarding") {
+      const url = req.nextUrl.clone();
+      url.pathname = "/dashboard";
+      return Response.redirect(url);
+    }
   },
   {
     callbacks: {

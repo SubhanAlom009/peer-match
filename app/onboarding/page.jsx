@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export default function OnboardingPage() {
-  const { data: session, status, update } = useSession(); // Add 'update' here
+  const { data: session, status, update } = useSession();
   const [form, setForm] = useState({
     year: "",
     college: "",
@@ -330,7 +330,7 @@ export default function OnboardingPage() {
                       className="text-gray-700 font-medium flex items-center gap-2"
                     >
                       <ExternalLink className="w-4 h-4 text-blue-600" />
-                      LinkedIn Profile (Optional)
+                      LinkedIn Profile
                     </Label>
                     <Input
                       id="linkedinURL"

@@ -45,7 +45,7 @@ export default function SignIn() {
       if (result?.error) {
         toast.error("Invalid credentials");
       } else if (result?.ok) {
-        toast.success("Welcome back! 🎉");
+        toast.success("Welcome! 🎉");
         router.push("/dashboard");
       }
     } catch (error) {
@@ -58,7 +58,7 @@ export default function SignIn() {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     try {
-      await signIn("google", { callbackUrl: "/dashboard" });
+      await signIn("google", { callbackUrl: "/dashboard", redirect: false });
     } catch (error) {
       toast.error("Google signin failed");
       setGoogleLoading(false);

@@ -110,7 +110,7 @@ export default function Dashboard() {
               </div>
 
               <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                Hey, {session.user.name}! 👋
+                Hey, {session.user.name}!
               </h1>
 
               <p className="text-xl text-gray-600 mb-4">
@@ -119,10 +119,6 @@ export default function Dashboard() {
               </p>
 
               <div className="flex items-center gap-4 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span>Last active: Just now</span>
-                </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>Profile {Math.round(profileCompletion)}% complete</span>
